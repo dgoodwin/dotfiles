@@ -182,3 +182,5 @@ autoload -U promptinit; promptinit
 prompt pure
 
 [[ -s "$HOME/.zshrc-system" ]] && source "$HOME/.zshrc-system"
+
+[[ -s "/Users/dgoodwin/.gvm/scripts/gvm" ]] && source "/Users/dgoodwin/.gvm/scripts/gvm"
