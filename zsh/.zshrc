@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="pure"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -123,10 +123,6 @@ alias v="nvim"
 alias kg="kubectl get"
 alias kgy="kubectl get -o yaml"
 
-# Beautiful theme.
-fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
-prompt pure
 
 export PATH=~/bin:$PATH:~/go/bin/
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
@@ -178,5 +174,11 @@ bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+
+# Beautiful theme.
+fpath+=$HOME/.zsh/pure
+#fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+prompt pure
 
 [[ -s "$HOME/.zshrc-system" ]] && source "$HOME/.zshrc-system"
