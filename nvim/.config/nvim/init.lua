@@ -18,10 +18,10 @@ vim.opt.rtp:prepend(lazypath)
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = "."
+vim.g.mapleader = ","
 vim.g.maplocalleader = "\\"
 
-vim.opt.nowrap = true
+vim.opt.wrap = false
 vim.opt.termguicolors = true -- Enable 24-bit RGB colors
 vim.opt.showmatch = true     -- Highlight matching parenthesis
 vim.opt.autowrite = true     -- Automatically save before :next, :make etc.
@@ -41,6 +41,7 @@ vim.opt.wrap = true
 
 -- Fast saving
 vim.keymap.set('n', '<Leader>w', ':write!<CR>')
+vim.keymap.set('n', '<C-s>', ':write!<CR>')
 vim.keymap.set('n', '<Leader>q', ':q!<CR>', { silent = true })
 
 -- Better split switching
