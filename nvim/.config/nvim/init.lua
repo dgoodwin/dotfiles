@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = ","
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = ","
 
 vim.opt.wrap = false
 vim.opt.termguicolors = true -- Enable 24-bit RGB colors
@@ -43,6 +43,7 @@ vim.opt.wrap = true
 vim.keymap.set('n', '<Leader>w', ':write!<CR>')
 vim.keymap.set('n', '<C-s>', ':write!<CR>')
 vim.keymap.set('n', '<Leader>q', ':q<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>e', ':e <C-R>=expand("%:p:h") . "/" <CR>')
 
 -- Better split switching
 vim.keymap.set('', '<C-j>', '<C-W>j')
@@ -64,8 +65,14 @@ require("lazy").setup({
     { "elzr/vim-json", lazy = false },
     { "avakhov/vim-yaml", lazy = false },
     --{ "scrooloose/nerdtree", lazy = false },
-    { "nvim-tree/nvim-tree.lua", lazy = false },
     { "mhartington/oceanic-next", lazy = false },
+    {
+      'dinhhuy258/git.nvim',
+      config = function ()
+        require("git").setup()
+      end,
+    },
+
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
