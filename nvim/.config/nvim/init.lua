@@ -42,7 +42,7 @@ vim.opt.wrap = true
 -- Fast saving
 vim.keymap.set('n', '<Leader>w', ':write!<CR>')
 vim.keymap.set('n', '<C-s>', ':write!<CR>')
-vim.keymap.set('n', '<Leader>q', ':q!<CR>', { silent = true })
+vim.keymap.set('n', '<Leader>q', ':q<CR>', { silent = true })
 
 -- Better split switching
 vim.keymap.set('', '<C-j>', '<C-W>j')
