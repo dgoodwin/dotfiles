@@ -38,6 +38,7 @@ vim.opt.shiftwidth = 2    -- number of spaces to use for each step of indent.
 vim.opt.tabstop = 2       -- number of spaces a TAB counts for
 vim.opt.autoindent = true -- copy indent from current line when starting a new line
 vim.opt.wrap = true
+vim.opt.autochdir = true     -- Change CWD when I open a file
 
 -- Fast saving
 vim.keymap.set('n', '<Leader>w', ':write!<CR>')
@@ -50,6 +51,23 @@ vim.keymap.set('', '<C-j>', '<C-W>j')
 vim.keymap.set('', '<C-k>', '<C-W>k')
 vim.keymap.set('', '<C-h>', '<C-W>h')
 vim.keymap.set('', '<C-l>', '<C-W>l')
+
+vim.keymap.set('i', '<C-c>', '<ESC>')
+
+-- Remove search highlight
+vim.keymap.set('n', '<Leader><space>', ':nohlsearch<CR>')
+
+-- Go uses gofmt, which uses tabs for indentation and spaces for aligment.
+-- Hence override our indentation rules.
+vim.api.nvim_create_autocmd('Filetype', {
+  group = vim.api.nvim_create_augroup('setIndent', { clear = true }),
+  pattern = { 'go' },
+  command = 'setlocal noexpandtab tabstop=4 shiftwidth=4'
+})
+
+-- automatically resize all vim buffers if I resize the terminal window
+vim.api.nvim_command('autocmd VimResized * wincmd =')
+
 
 -- Setup lazy.nvim
 require("lazy").setup({
