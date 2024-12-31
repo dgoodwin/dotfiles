@@ -77,7 +77,6 @@ require("lazy").setup({
     { "vim-airline/vim-airline", lazy = false },
     { "vim-airline/vim-airline-themes", lazy = false },
     { "jeetsukumaran/vim-buffergator", lazy = false },
-    { "tpope/vim-fugitive", lazy = false },
     { "easymotion/vim-easymotion", lazy = false },
     { "scrooloose/nerdcommenter", lazy = false },
     { "elzr/vim-json", lazy = false },
