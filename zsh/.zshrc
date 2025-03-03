@@ -122,6 +122,9 @@ alias v="nvim"
 # kubernetes aliases
 alias kg="kubectl get"
 alias kgy="kubectl get -o yaml"
+alias sd="sudo systemctl"
+alias sdu="systemctl --user"
+alias jc="sudo journalctl"
 
 
 export PATH=~/bin:$PATH:~/go/bin/
