@@ -71,7 +71,7 @@ ZSH_THEME=""
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git colorize  command-not-found copyfile cp kubectl history docker golang dnf yum systemd themes encode64 fasd zsh-autosuggestions)
+plugins=(git colorize  command-not-found copyfile cp kubectl history docker golang dnf yum systemd themes encode64 fasd)
 # TODO: try autoenv
 
 source $ZSH/oh-my-zsh.sh
