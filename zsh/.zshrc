@@ -184,6 +184,17 @@ fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
+# git lb branch switching
+function git_checkout_fzf() {
+  local branch
+  # Corrected awk command:
+  branch=$(git branch --sort=-committerdate | awk '{print ($1 == "*") ? $2 : $1}' | fzf --height 40% --layout=reverse --border --prompt="Select branch: ")
+  if [[ -n "$branch" ]]; then
+    git checkout "$branch"
+  fi
+}
+alias glb='git_checkout_fzf' # gcf for "git checkout fzf"
+
 [[ -s "$HOME/.zshrc-system" ]] && source "$HOME/.zshrc-system"
 
 [[ -s "/Users/dgoodwin/.gvm/scripts/gvm" ]] && source "/Users/dgoodwin/.gvm/scripts/gvm"
